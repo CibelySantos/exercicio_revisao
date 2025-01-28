@@ -18,26 +18,26 @@ body {
     width: 90%; 
     max-width: 400px;
     padding: 20px;
-    background-color: #7f5a3ae6;
-    border: 2px solid #4a2e1a;
+    background-color: #2a2a72; /* Azul-escuro */
+    border: 2px solid #1c1c3c; /* Azul mais escuro */
     border-radius: 8px;
-    box-shadow: 0px 4px 12px #00000033;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 .login h1 {
-    color: #f7f3eb; 
+    color: #f4f4f9; /* Quase branco */
     margin-bottom: 20px;
     font-size: 1.5em; 
 }
 .error {
-    color: #ff0000;
+    color: #ff4d4d; /* Vermelho vibrante */
     margin-bottom: 15px;
 }
 label {
     text-align: left;
     display: flex;
     margin-top: 15px;
-    color: #f7f3eb;
+    color: #f4f4f9;
     font-weight: bold;
 }
 input[type="text"],
@@ -45,17 +45,17 @@ input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #4a2e1a;
+    border: 1px solid #1c1c3c;
     border-radius: 4px;
-    background-color: #f2e3d5;
-    color: #4a2e1a;
+    background-color: #d9e4ff; /* Azul-claro */
+    color: #1c1c3c;
 }
 button[type="submit"] {
     width: 100%;
     padding: 10px;
     margin-top: 15px;
-    background-color: #4a2e1a;
-    color: #f7f3eb; 
+    background-color: #1c1c3c; /* Azul mais escuro */
+    color: #f4f4f9; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -64,19 +64,19 @@ button[type="submit"] {
     transition: 0.3s;
 }
 button[type="submit"]:hover {
-    background-color: #b97f4d;
-    color: #000000;
+    background-color: #4c4cff; /* Azul vibrante */
+    color: #ffffff;
 }
 #cadastro {
     display: block;
     margin-top: 10px;
     text-decoration: none;
-    color: #f7f3eb;
+    color: #f4f4f9;
     padding: 10px;
     font-weight: bold;
 }
 #cadastro:hover {
-    color: #4a2e1a;
+    color: #4c4cff; /* Azul vibrante */
 }
 @media (max-width: 600px) {
     .login {

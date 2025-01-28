@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (password_verify($senha, $usuario_logado['senha'])) {
             $_SESSION['usuario_sessao'] = $usuario_logado['nome'];
             $_SESSION['tipo_sessao'] = $usuario_logado['tipo_usuario'];
-            header('Location: ./sucess.html');
+            header('Location: dashboard.php');
             exit();
         } else {
             $erro = 'Senha incorreta';
