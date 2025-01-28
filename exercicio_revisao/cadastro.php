@@ -12,13 +12,13 @@ if ($connection->connect_error) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome_usuario = $_POST['nome'];
-    $email_usuario = $_POST['email'];
     $pass_usuario = $_POST['senha'];
+    $email_usuario = $_POST['email'];
 
     $pass_usuario_hash = password_hash($pass_usuario, PASSWORD_DEFAULT);
 
-    $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $nome_usuario, $email_usuario, $pass_usuario_hash);
+    $stmt = $connection->prepare("INSERT INTO usuarios (nome, senha, email) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $nome_usuario, $pass_usuario_hash, $email_usuario);
 
     if ($stmt->execute()) {
         $_SESSION['status'] = 'sucesso';
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['erro_msg'] = $stmt->error;
     }
     $stmt->close();
-    $conn->close();
+    $connection->close();
 
     header("Location: " . $_SERVER['PHP_SELF']);
     exit();
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
-    <div class="cadastro">
+    <div fuinction="dashboard.php" class="cadastro">
         <form method="POST">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required><br><br>
