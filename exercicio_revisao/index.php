@@ -39,6 +39,7 @@ if ($erro) {
     <title>Teste</title>
     <link rel="icon" href="../img/img_para_colocar_no_title-removebg-preview.png" type="image/x-icon">
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="login">
@@ -57,10 +58,37 @@ if ($erro) {
     </div>
 
     <script>
-        <?php if (isset($_SESSION['erro_login'])): ?>
-            alert('<?php echo $_SESSION['erro_login']; ?>');
-            <?php unset($_SESSION['erro_login']); ?>
-        <?php endif; ?>
-    </script>
+    <?php if (isset($_SESSION['erro_login'])): ?>
+        switch ('<?php echo $_SESSION['erro_login']; ?>') {
+            case 'Senha incorreta':
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Senha incorreta',
+                    text: 'A senha fornecida está incorreta. Tente novamente.',
+                    confirmButtonText: 'Ok'
+                });
+                break;
+            case 'Usuário não encontrado':
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Usuário não encontrado',
+                    text: 'O nome de usuário não foi encontrado. Verifique e tente novamente.',
+                    confirmButtonText: 'Ok'
+                });
+                break;
+            default:
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro desconhecido',
+                    text: 'Ocorreu um erro inesperado.',
+                    confirmButtonText: 'Ok'
+                });
+                break;
+        }
+        <?php unset($_SESSION['erro_login']); ?>
+    <?php endif; ?>
+</script>
+
+
 </body>
 </html>
