@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $password = '';
-$database = 'sitema_login';
+$database = 'sistema_login';
 
 $connection = mysqli_connect($host, $user, $password, $database);
 
