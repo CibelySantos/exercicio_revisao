@@ -2,11 +2,11 @@
 $host = 'localhost';
 $user = 'root';
 $password = '';
-$database = 'sitema_login';
+$database = 'sistema_login';
 
-$connection =new mysqli($host, $user, $password, $database);
+$connection = new mysqli($host, $user, $password, $database);
 
-if ($conn->connect_error) {
+if ($connection->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
     <div class="cadastro">
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" id="nome" name="nome" required><br><br>
 
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required><br><br>
+            <input type="text" id="email" name="email" required><br><br>
     
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required><br><br>

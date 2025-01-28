@@ -1,5 +1,5 @@
 <?php
-include './conexao.php';
+include 'sql/conexao.php';
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste</title>
     <link rel="icon" href="../img/img_para_colocar_no_title-removebg-preview.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <div class="login">
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <button type="submit">Enviar</button>
 
-            <a id="cadastro" href="./cadastro.php">Cadastre-se</a>
+            <a id="cadastro" href="cadastro.php">Cadastre-se</a>
         </form>
     </div>
 </body>
