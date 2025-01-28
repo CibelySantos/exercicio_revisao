@@ -32,16 +32,18 @@ $result_select = mysqli_query($connection, $query_select);
         <tr>
             <th>ID</th>
             <th>Nome do Filme</th>
-            <th>Preço</th>
-            <th>Descrição</th>
+            <th>Gênero</th>
+            <th>Data de lançamento</th>
         </tr>
         
         <?php
         // Exibindo a lista de produtos
         while ($filme = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>" . $produto['id'] . "</td>";
-            echo "<td>" . $produto['nome'] . "</td>";
+            echo "<td>" . $filme['id'] . "</td>";
+            echo "<td>" . $filme['nome'] . "</td>";
+            echo "<td>" . $filme['genero'] . "</td>";
+            echo "<td>" . $filme['data_lancamento'] . "</td>";
 
             echo "</tr>";
         }
