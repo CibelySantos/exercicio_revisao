@@ -2,10 +2,11 @@
 include 'sql/conexao.php';
 session_start();
 
+$erro = '';
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST['nome'];
     $senha = $_POST['senha'];
-    $email = $_POST['email'];
 
     $query = "SELECT * FROM usuarios WHERE nome = '$nome'";
     $result = mysqli_query($connection, $query);
@@ -17,12 +18,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['usuario_sessao'] = $usuario_logado['nome'];
             $_SESSION['tipo_sessao'] = $usuario_logado['tipo_usuario'];
             header('Location: ./sucess.html');
+            exit();
         } else {
-            echo 'Senha incorreta';
+            $erro = 'Senha incorreta';
         }
     } else {
-        echo 'Usuário não encontrado';
+        $erro = 'Usuário não encontrado';
     }
+}
+
+if ($erro) {
+    $_SESSION['erro_login'] = $erro;
 }
 ?>
 <!DOCTYPE html>
@@ -49,5 +55,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <a id="cadastro" href="cadastro.php">Cadastre-se</a>
         </form>
     </div>
+
+    <script>
+        <?php if (isset($_SESSION['erro_login'])): ?>
+            alert('<?php echo $_SESSION['erro_login']; ?>');
+            <?php unset($_SESSION['erro_login']); ?>
+        <?php endif; ?>
+    </script>
 </body>
 </html>
