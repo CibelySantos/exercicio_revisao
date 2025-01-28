@@ -24,7 +24,7 @@ $result_select = mysqli_query($connection, $query_select);
 </head>
 <body>
     <h1>Bem-vindo, <?php echo $_SESSION['usuario_sessao']; ?>!</h1>
-    <h2>Lista de Produtos</h2>
+    <h2>Lista de Filmes</h2>
     <table border="1">
         <tr>
             <th>ID</th>
