@@ -9,7 +9,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('../img/img_index.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
@@ -18,26 +17,26 @@ body {
     width: 90%;
     max-width: 400px;
     padding: 20px;
-    border: 2px solid #1c1c3c; /* Azul mais escuro */
-    background-color: #2a2a72; /* Azul-escuro */
+    border: 2px solid #1c1c3c;
+    background-color: #2a2a72; 
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
     text-align: center;
 }
 .cadastro h1 {
-    color: #ffffff; /* Texto branco */
+    color: #ffffff;
     margin-bottom: 20px;
     font-size: 1.5em;
 }
 .error {
-    color: #ff4d4d; /* Vermelho vibrante */
+    color: #ff4d4d;
     margin-bottom: 15px;
 }
 label {
     text-align: left;
     display: flex;
     margin-top: 15px;
-    color: #ffffff; /* Texto branco */
+    color: #ffffff;
     font-weight: bold;
 }
 select,
@@ -48,15 +47,15 @@ input[type="password"] {
     margin-top: 5px;
     border: 1px solid #1c1c3c;
     border-radius: 4px;
-    background-color: #d9e4ff; /* Azul-claro */
-    color: #2a2a72; /* Azul escuro */
+    background-color: #d9e4ff; 
+    color: #2a2a72;
 }
 button[type="submit"] {
     width: 100%;
     padding: 10px;
     margin-top: 15px;
-    background-color: #1c1c3c; /* Azul mais escuro */
-    color: #ffffff; /* Branco */
+    background-color: #1c1c3c; 
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -65,7 +64,7 @@ button[type="submit"] {
     transition: 0.3s;
 }
 button[type="submit"]:hover {
-    background-color: #4c4cff; /* Azul vibrante */
+    background-color: #4c4cff;
     color: #ffffff;
 }
 @media (max-width: 600px) {

@@ -43,8 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
-    <div fuinction="dashboard.php" class="cadastro">
-        <form method="POST">
+    <div class="cadastro">
+        <form function="dashboard.php" method="POST">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required><br><br>
 
